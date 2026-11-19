@@ -1,0 +1,7 @@
+{
+  "name": "pom-openmausbot-runtime",
+  "private": true,
+  "dependencies": {
+    "openmausbot": "0.1.170"
+  }
+}

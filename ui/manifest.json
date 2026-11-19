@@ -1,0 +1,78 @@
+{
+  "schema": "pom-plugin-ui/v1",
+  "plugin_code": "openmausbot",
+  "lifecycle": "on_demand",
+  "icon_image": "ui/icon.png",
+  "description": {
+    "en": "OpenMausBot, the open-source chat app for a team of AI bots, running inside POM on the models your own cluster serves. One click installs a verified, self-contained runtime (Node.js and the official openmausbot package), and the bots connect to POM's models on their own.\n\nWhat it does:\n- A chat app where every bot is a contact: its own personality, model and memory, with a Chief of Staff bot that hands work to the others.\n- Bots that work: approvals cards for what matters, routines and schedules, files, connected apps and MCP servers.\n- Models from POM under the **POM** engine, plus any account you already have (Claude, ChatGPT/Codex and other providers) from OpenMausBot's own settings.\n- The original OpenMausBot interface, edge to edge in POM, served through POM's authenticated proxy.\n\nOpens on demand, and closes completely, bots' engines and browsers included, when you stop it from the menu.",
+    "pt-BR": "OpenMausBot, o app de chat open source para uma equipe de bots de IA, rodando dentro do POM com os modelos que o seu próprio cluster serve. Um clique instala um runtime verificado e autocontido (Node.js e o pacote oficial openmausbot), e os bots se conectam sozinhos aos modelos do POM.\n\nO que ele faz:\n- Um app de chat em que cada bot é um contato: personalidade, modelo e memória próprios, com um bot Chefe de Gabinete que distribui o trabalho para os outros.\n- Bots que trabalham: cartões de aprovação para o que importa, rotinas e agendamentos, arquivos, apps conectados e servidores MCP.\n- Modelos do POM no engine **POM**, além de qualquer conta que você já tenha (Claude, ChatGPT/Codex e outros provedores) nas configurações do próprio OpenMausBot.\n- A interface original do OpenMausBot, de ponta a ponta no POM, servida pelo proxy autenticado do POM.\n\nAbre sob demanda e fecha por completo, engines e navegadores dos bots incluídos, quando você o para pelo menu."
+  },
+  "screenshots": [
+    "docs/screenshots/main.png"
+  ],
+  "documentation": {
+    "guides": [
+      {
+        "id": "getting-started",
+        "title": {
+          "en": "Getting started",
+          "pt-BR": "Primeiros passos"
+        },
+        "asset": "docs/getting-started.md"
+      }
+    ],
+    "reference": []
+  },
+  "menu": [
+    {
+      "id": "openmausbot",
+      "label": {
+        "en": "OpenMausBot",
+        "pt-BR": "OpenMausBot"
+      },
+      "icon": "messages-square",
+      "to": "/main"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/main",
+      "screen": "main",
+      "full_bleed": true
+    }
+  ],
+  "screens": {
+    "main": {
+      "module": "ui/screens.js",
+      "export": "main",
+      "styles": [
+        "ui/plugin.css"
+      ]
+    }
+  },
+  "i18n": {
+    "en": "i18n/en.json",
+    "pt-BR": "i18n/pt-BR.json"
+  },
+  "development": {
+    "rebuild": [
+      {
+        "run": [
+          "scripts/dev-ui.sh"
+        ],
+        "os": [
+          "linux",
+          "macos"
+        ]
+      }
+    ]
+  },
+  "assets": [
+    "ui/screens.js",
+    "ui/plugin.css",
+    "ui/icon.png",
+    "i18n/en.json",
+    "i18n/pt-BR.json",
+    "docs/getting-started.md"
+  ]
+}
